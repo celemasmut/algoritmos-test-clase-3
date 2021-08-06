@@ -39,11 +39,7 @@ public class Dolar {
                 if(alza < aCompararAlza){
                     alza=aCompararAlza;
                 }
-
-               /* aCompararAlza = historicoDolar.get(siguientePosicion) - historicoDolar.get(i);
-                if(alza < aCompararAlza){
-                    alza=aCompararAlza;
-                }*/
+                
             }
             if(siguientePosicion < 10)
                 siguientePosicion++;
