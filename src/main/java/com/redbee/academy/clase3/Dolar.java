@@ -30,6 +30,26 @@ public class Dolar {
      */
     public static Float resolver(List<Float> historicoDolar) {
         //TODO: implementar
-        return null;
+        float aCompararAlza=0;
+        float alza=0;
+        int siguientePosicion=1;
+        for(int i =0 ; i<historicoDolar.size()-1; i++){
+            if(historicoDolar.get(siguientePosicion) > historicoDolar.get(i)){
+                aCompararAlza = historicoDolar.get(siguientePosicion) - historicoDolar.get(i) ;
+                if(alza < aCompararAlza){
+                    alza=aCompararAlza;
+                }
+
+               /* aCompararAlza = historicoDolar.get(siguientePosicion) - historicoDolar.get(i);
+                if(alza < aCompararAlza){
+                    alza=aCompararAlza;
+                }*/
+            }
+            if(siguientePosicion < 10)
+                siguientePosicion++;
+
+        }
+        alza =Math.round(alza*100)/100f;
+        return alza;
     }
 }
