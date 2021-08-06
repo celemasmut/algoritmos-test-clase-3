@@ -1,5 +1,8 @@
 package com.redbee.academy.clase3;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Cuil {
 
     /**
@@ -42,6 +45,63 @@ public class Cuil {
      */
     public static Integer calcular(Integer tipoPersona, Integer dni) {
         // TODO: implementar
-        return null;
+        List<Integer> numerosPersona = new ArrayList<>();
+        llenarLista(separarDecimal(tipoPersona),numerosPersona);
+        llenarLista(separarDecimal(dni),numerosPersona);
+        List<Integer>digitosAmultiplicar = new ArrayList<>();
+        ingresaDigitosAmultiplicarAlista(digitosAmultiplicar,5,4,3,2,7,6,5,4,3,2);
+        
+        int posicion = 0;
+        int multiplica;
+        int suma=0;
+        while (posicion < numerosPersona.size()){
+            multiplica = numerosPersona.get(posicion) * digitosAmultiplicar.get(posicion);
+            suma+=multiplica;
+            posicion++;
+        }
+
+        double resto = (suma % 11.0);
+
+        return  11- (int)resto;
+    }
+    private static void ingresaDigitosAmultiplicarAlista(List<Integer>listaDeDigitosXmultiplicar,int a, int b, int c, int d, int e, int f, int g, int h, int i, int j){
+        listaDeDigitosXmultiplicar.add(a);
+        listaDeDigitosXmultiplicar.add(b);
+        listaDeDigitosXmultiplicar.add(c);
+        listaDeDigitosXmultiplicar.add(d);
+        listaDeDigitosXmultiplicar.add(e);
+        listaDeDigitosXmultiplicar.add(f);
+        listaDeDigitosXmultiplicar.add(g);
+        listaDeDigitosXmultiplicar.add(h);
+        listaDeDigitosXmultiplicar.add(i);
+        listaDeDigitosXmultiplicar.add(j);
+    }
+    private static List<Integer> separarDecimal(Integer numero){
+        List<Integer>numerosSeparados = new ArrayList<>();
+        while (numero > 0) {
+            int nuevoNumero = numero % 10;
+            numero = numero / 10;
+            numerosSeparados= agregarAlPrincipio(numerosSeparados,nuevoNumero);
+        }
+        return numerosSeparados;
+    }
+
+    private static List<Integer>agregarAlPrincipio(List<Integer>listaAAgregar, int numero){
+        int contador = 0;
+        if(listaAAgregar != null) {
+            while (contador < listaAAgregar.size()) {
+                if (listaAAgregar.get(contador) == null) {
+                    listaAAgregar.remove(contador);
+                }
+                contador++;
+            }
+        }
+        listaAAgregar.add(0, numero);
+        return listaAAgregar;
+    }
+    private static void llenarLista(List<Integer> numerosSeparados, List<Integer>numerosPersona){
+        for(Integer elemento : numerosSeparados){
+            numerosPersona.add(elemento);
+        }
     }
 }
