@@ -13,6 +13,17 @@ public class Palindromo {
      */
     public static Boolean esPalindromo(String palabra) {
         // TODO: implementar
-        return null;
+        boolean esPalindormo=false;
+        if(palabra == null || palabra.length() < 1) return esPalindormo;
+        int left=0;
+        int right= palabra.length()-1;
+        while (left < palabra.length()){
+            if(palabra.charAt(left) == palabra.charAt(right)){
+                esPalindormo=true;
+            }
+            left++;
+            right--;
+        }
+        return esPalindormo;
     }
 }
