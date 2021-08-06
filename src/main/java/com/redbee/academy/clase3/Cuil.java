@@ -50,7 +50,7 @@ public class Cuil {
         llenarLista(separarDecimal(dni),numerosPersona);
         List<Integer>digitosAmultiplicar = new ArrayList<>();
         ingresaDigitosAmultiplicarAlista(digitosAmultiplicar,5,4,3,2,7,6,5,4,3,2);
-        
+
         int posicion = 0;
         int multiplica;
         int suma=0;

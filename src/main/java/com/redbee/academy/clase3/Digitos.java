@@ -1,5 +1,8 @@
 package com.redbee.academy.clase3;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Digitos {
 
 
@@ -10,6 +13,16 @@ public class Digitos {
      */
     public static Integer resolver(Long numero) {
         //TODO: implementar
-        return null;
+        int cantidadDigitos=0;
+        if(numero == 0){
+            cantidadDigitos++;
+        }else {
+            while (numero != 0) {
+                numero = numero / 10;
+                cantidadDigitos++;
+            }
+        }
+            return cantidadDigitos;
+
     }
 }
