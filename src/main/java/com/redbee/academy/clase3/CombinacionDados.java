@@ -16,7 +16,19 @@ public class CombinacionDados {
      */
     public static Integer resolverCombinacionesPosiblesCon2Dados(Integer valor) {
         // TODO: implementar
-        return null;
+
+        int dado1=6;
+        int dado2=6;
+        Integer contador=0;
+        for(int i =1 ; i <= dado1; i++){
+            for(int j = 1; j <= dado2 ; j++){
+                int suma = i+j;
+                    if(suma == valor){
+                        contador++;
+                }
+            }
+        }
+        return contador;
     }
 
     /**
@@ -27,6 +39,23 @@ public class CombinacionDados {
      */
     public static Integer resolverCombinacionesPosiblesCon3Dados(Integer valor) {
         // TODO: implementar
-        return null;
+
+        int dado1=6;
+        int dado2=6;
+        int dado3=6;
+        Integer contador=0;
+        for(int i =1 ; i <= dado1; i++){
+            for(int j = 1; j <= dado2 ; j++){
+                for(int g=1 ; g <= dado3 ; g++){
+                    int suma = i+j+g;
+                    if(suma == valor){
+                        contador++;
+                    }
+                }
+
+            }
+        }
+        return contador;
     }
+
 }
